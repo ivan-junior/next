@@ -1,4 +1,6 @@
 {
-  "compilerOptions": {},
+  "compilerOptions": {
+    "target": "ES6"
+  },
   "extends": "expo/tsconfig.base"
 }

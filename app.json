@@ -1,0 +1,36 @@
+{
+    "expo": {
+        "name": "Next - Blue Sol Energia Solar",
+        "slug": "next",
+        "version": "1.0.0",
+        "orientation": "portrait",
+        "icon": "./assets/mobile.png",
+        "userInterfaceStyle": "dark",
+        "splash": {
+            "image": "./assets/splash.png",
+            "resizeMode": "contain",
+            "backgroundColor": "#000000"
+        },
+        "updates": {
+            "fallbackToCacheTimeout": 0
+        },
+        "assetBundlePatterns": [
+            "**/*"
+        ],
+        "ios": {
+            "supportsTablet": true,
+            "bundleIdentifier": "br.com.bluesol.next",
+            "buildNumber": "1.0.0"
+        },
+        "android": {
+            "adaptiveIcon": {
+                "foregroundImage": "./assets/adaptive-icon.png",
+                "backgroundColor": "#FFFFFF"
+            },
+            "package": "br.com.bluesol.next"
+        },
+        "web": {
+            "favicon": "./assets/favicon.png"
+        }
+    }
+}
