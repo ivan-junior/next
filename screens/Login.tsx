@@ -1,6 +1,6 @@
 import { Image, StyleSheet, View } from "react-native";
 import { Button, Icon, Input, Text } from "@rneui/themed";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { storeData } from "../services/storeData";
 import authenticate from "../apis/authenticate";

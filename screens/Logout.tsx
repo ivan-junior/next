@@ -8,7 +8,6 @@ import { RootStackParamList } from "../types";
 type LogoutScreenProps = NativeStackScreenProps<RootStackParamList, 'Logout'>
 
 export const LogoutScreen: React.FC<LogoutScreenProps> = (props) => {
-    const [token, setToken] = useState(true)
     const [isLoading, setLoading] = useState(false)
     const logout = () => {
         setLoading(true)

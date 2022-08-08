@@ -1,22 +1,15 @@
 import 'react-native-gesture-handler';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import Home from './screens/Home';
 import Login from './screens/Login';
 import { LogoutScreen } from './screens/Logout';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useState } from 'react';
 import {Proposal} from './screens/Proposal';
 
 export default function App() {
   const Drawer = createDrawerNavigator()
-  const [isLoading, setLoading] = useState(true)
-  // AsyncStorage.getItem('TOKEN').then((token) => {
-    
-  // })
   return (
-
     <NavigationContainer>
       <Drawer.Navigator useLegacyImplementation initialRouteName="Login">
         <Drawer.Screen name="Login" component={Login} options={{headerShown: false}} />
