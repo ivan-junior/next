@@ -1,7 +1,7 @@
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { Icon, Input, Text } from "@rneui/themed";
 import { useState } from "react";
-import { ScrollView, StyleSheet, View } from "react-native";
+import { ActivityIndicator, ScrollView, StyleSheet, View } from "react-native";
 import SelectDropdown from "react-native-select-dropdown";
 import getCep from "../apis/cep";
 import { ICepResponse } from "../interfaces/cepResponse";
@@ -10,6 +10,7 @@ type ProposalScreenProps = NativeStackScreenProps<RootStackParamList, 'Login'>
 
 export const Proposal: React.FC<ProposalScreenProps> = (props) => {
     const [cep, setCep] = useState('')
+    const [isLoadingCep, setLoadingCep] = useState(false)
     const [logradouro, setLogradouro] = useState('')
     const [complemento, setComplemento] = useState('')
     const [bairro, setBairro] = useState('')
@@ -134,20 +135,28 @@ export const Proposal: React.FC<ProposalScreenProps> = (props) => {
                 containerStyle={styles.containerStyle}
                 onChangeText={value => setCep(value)}
                 rightIcon={
-                    <Icon 
-                        name="search"
-                        size={30}
-                        color='gray'
-                        onPressIn={() => getCep(cep).then((response: ICepResponse) => {
-                            console.log(response)
-                            setLogradouro(response.logradouro)
-                            setComplemento(response.complemento)
-                            setBairro(response.bairro)
-                            setLocalidade(response.localidade)
-                            setUf(response.uf)
-                        })}
-
-                    />
+                    isLoadingCep
+                        ?
+                            <ActivityIndicator size={'small'} color='gray' />
+                        :
+                            <Icon 
+                                name="search"
+                                size={30}
+                                color='gray'
+                                onPressIn={() => {
+                                        setLoadingCep(true)
+                                        getCep(cep).then((response: ICepResponse) => {
+                                            setLogradouro(response.logradouro)
+                                            setComplemento(response.complemento)
+                                            setBairro(response.bairro)
+                                            setLocalidade(response.localidade)
+                                            setUf(response.uf)
+                                        }).finally(() => {
+                                            setLoadingCep(false)
+                                        })
+                                    }
+                                }
+                            />
                 }
                 keyboardType='number-pad'
             />
