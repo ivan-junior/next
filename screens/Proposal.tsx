@@ -45,6 +45,12 @@ export const Proposal: React.FC<ProposalScreenProps> = (props) => {
                         {optionName: 'Ligação na Loja', value: 'a1c38fe3-e379-4c0b-846e-c2cf45822c87'},
                         {optionName: 'Anúncio em Outro Site', value: '107f2143-cbb9-4939-80f5-fab324103349'},
                     ]}
+                    buttonStyle={styles.dropdown2BtnStyle2}
+                    buttonTextStyle={styles.dropdown2BtnTxtStyle}
+                    dropdownStyle={styles.dropdown2DropdownStyle}
+                    rowStyle={styles.dropdown2RowStyle}
+                    rowTextStyle={styles.dropdown2RowTxtStyle}
+                    selectedRowStyle={styles.dropdown2SelectedRowStyle}
                     onSelect={(selectedItem, index) => {
                         // console.log(selectedItem, index)
                     }}
@@ -54,10 +60,11 @@ export const Proposal: React.FC<ProposalScreenProps> = (props) => {
                     rowTextForSelection={(item, index) => {
                         return item.optionName
                     }}
-                    dropdownStyle={{width: '90%'}}
-                    buttonStyle={{backgroundColor: '#c7c7c7', borderRadius: 10, width: '100%', padding: 10}}
                     defaultButtonText='Selecione a Origem'
-                    buttonTextStyle={{color: 'black'}}
+                    renderDropdownIcon={isOpened => {
+                        return <Icon name={isOpened? 'chevron-up' : 'chevron-down'} type='font-awesome-5' color={'black'} size={18} />
+                    }}
+                    dropdownIconPosition={'right'}
                 />
                 <SelectDropdown
                     data={[
@@ -73,10 +80,17 @@ export const Proposal: React.FC<ProposalScreenProps> = (props) => {
                     rowTextForSelection={(item, index) => {
                         return item.optionName
                     }}
-                    dropdownStyle={{width: '90%'}}
-                    buttonStyle={{backgroundColor: '#c7c7c7', borderRadius: 10, width: '100%', padding: 10, marginTop: 20}}
+                    buttonStyle={styles.dropdown2BtnStyle}
+                    buttonTextStyle={styles.dropdown2BtnTxtStyle}
+                    dropdownStyle={styles.dropdown2DropdownStyle}
+                    rowStyle={styles.dropdown2RowStyle}
+                    rowTextStyle={styles.dropdown2RowTxtStyle}
+                    selectedRowStyle={styles.dropdown2SelectedRowStyle}
                     defaultButtonText='Selecione o tipo'
-                    buttonTextStyle={{color: 'black'}}
+                    renderDropdownIcon={isOpened => {
+                        return <Icon name={isOpened? 'chevron-up' : 'chevron-down'} type='font-awesome-5' color={'black'} size={18} />
+                    }}
+                    dropdownIconPosition={'right'}
                 />
             
             </View>
@@ -122,7 +136,7 @@ export const Proposal: React.FC<ProposalScreenProps> = (props) => {
                 rightIcon={
                     <Icon 
                         name="search"
-                        size={24}
+                        size={30}
                         color='gray'
                         onPressIn={() => getCep(cep).then((response: ICepResponse) => {
                             console.log(response)
@@ -132,6 +146,7 @@ export const Proposal: React.FC<ProposalScreenProps> = (props) => {
                             setLocalidade(response.localidade)
                             setUf(response.uf)
                         })}
+
                     />
                 }
                 keyboardType='number-pad'
@@ -202,10 +217,17 @@ export const Proposal: React.FC<ProposalScreenProps> = (props) => {
                     rowTextForSelection={(item, index) => {
                         return item.optionName
                     }}
-                    dropdownStyle={{width: '90%'}}
-                    buttonStyle={{backgroundColor: '#c7c7c7', borderRadius: 10, width: '100%', padding: 10, marginTop: 20}}
+                    buttonStyle={styles.dropdown2BtnStyle}
+                    buttonTextStyle={styles.dropdown2BtnTxtStyle}
+                    dropdownStyle={styles.dropdown2DropdownStyle}
+                    rowStyle={styles.dropdown2RowStyle}
+                    rowTextStyle={styles.dropdown2RowTxtStyle}
+                    selectedRowStyle={styles.dropdown2SelectedRowStyle}
                     defaultButtonText='Selecione o tipo de endereço'
-                    buttonTextStyle={{color: 'black'}}
+                    renderDropdownIcon={isOpened => {
+                        return <Icon name={isOpened? 'chevron-up' : 'chevron-down'} type='font-awesome-5' color={'black'} size={18} />
+                    }}
+                    dropdownIconPosition={'right'}
                 />
             </View>
             <Text h4 style={styles.topicItem}>
@@ -230,10 +252,17 @@ export const Proposal: React.FC<ProposalScreenProps> = (props) => {
                     rowTextForSelection={(item, index) => {
                         return item.optionName
                     }}
-                    dropdownStyle={{width: '90%'}}
-                    buttonStyle={{backgroundColor: '#c7c7c7', borderRadius: 10, width: '100%', padding: 10, marginTop: 20}}
+                    buttonStyle={styles.dropdown2BtnStyle2}
+                    buttonTextStyle={styles.dropdown2BtnTxtStyle}
+                    dropdownStyle={styles.dropdown2DropdownStyle}
+                    rowStyle={styles.dropdown2RowStyle}
+                    rowTextStyle={styles.dropdown2RowTxtStyle}
+                    selectedRowStyle={styles.dropdown2SelectedRowStyle}
                     defaultButtonText='Estrutura para:'
-                    buttonTextStyle={{color: 'black'}}
+                    renderDropdownIcon={isOpened => {
+                        return <Icon name={isOpened? 'chevron-up' : 'chevron-down'} type='font-awesome-5' color={'black'} size={18} />
+                    }}
+                    dropdownIconPosition={'right'}
                 />
                 <SelectDropdown
                     data={[
@@ -252,10 +281,17 @@ export const Proposal: React.FC<ProposalScreenProps> = (props) => {
                     rowTextForSelection={(item, index) => {
                         return item.optionName
                     }}
-                    dropdownStyle={{width: '90%'}}
-                    buttonStyle={{backgroundColor: '#c7c7c7', borderRadius: 10, width: '100%', padding: 10, marginTop: 20}}
+                    buttonStyle={styles.dropdown2BtnStyle2}
+                    buttonTextStyle={styles.dropdown2BtnTxtStyle}
+                    dropdownStyle={styles.dropdown2DropdownStyle}
+                    rowStyle={styles.dropdown2RowStyle}
+                    rowTextStyle={styles.dropdown2RowTxtStyle}
+                    selectedRowStyle={styles.dropdown2SelectedRowStyle}
                     defaultButtonText='Tensão:'
-                    buttonTextStyle={{color: 'black'}}
+                    renderDropdownIcon={isOpened => {
+                        return <Icon name={isOpened? 'chevron-up' : 'chevron-down'} type='font-awesome-5' color={'black'} size={18} />
+                    }}
+                    dropdownIconPosition={'right'}
                 />
                 <SelectDropdown
                     data={[
@@ -272,10 +308,17 @@ export const Proposal: React.FC<ProposalScreenProps> = (props) => {
                     rowTextForSelection={(item, index) => {
                         return item.optionName
                     }}
-                    dropdownStyle={{width: '90%'}}
-                    buttonStyle={{backgroundColor: '#c7c7c7', borderRadius: 10, width: '100%', padding: 10, marginTop: 20}}
+                    buttonStyle={styles.dropdown2BtnStyle}
+                    buttonTextStyle={styles.dropdown2BtnTxtStyle}
+                    dropdownStyle={styles.dropdown2DropdownStyle}
+                    rowStyle={styles.dropdown2RowStyle}
+                    rowTextStyle={styles.dropdown2RowTxtStyle}
+                    selectedRowStyle={styles.dropdown2SelectedRowStyle}
                     defaultButtonText='Tipo de ligação:'
-                    buttonTextStyle={{color: 'black'}}
+                    renderDropdownIcon={isOpened => {
+                        return <Icon name={isOpened? 'chevron-up' : 'chevron-down'} type='font-awesome-5' color={'black'} size={18} />
+                    }}
+                    dropdownIconPosition={'right'}
                 />
             </View>
             <Input
@@ -333,10 +376,17 @@ export const Proposal: React.FC<ProposalScreenProps> = (props) => {
                     rowTextForSelection={(item, index) => {
                         return item.optionName
                     }}
-                    dropdownStyle={{width: '90%'}}
-                    buttonStyle={{backgroundColor: '#c7c7c7', borderRadius: 10, width: '100%', padding: 10, marginTop: 20}}
+                    buttonStyle={styles.dropdown2BtnStyle}
+                    buttonTextStyle={styles.dropdown2BtnTxtStyle}
+                    dropdownStyle={styles.dropdown2DropdownStyle}
+                    rowStyle={styles.dropdown2RowStyle}
+                    rowTextStyle={styles.dropdown2RowTxtStyle}
+                    selectedRowStyle={styles.dropdown2SelectedRowStyle}
                     defaultButtonText='Concessionária:'
-                    buttonTextStyle={{color: 'black'}}
+                    renderDropdownIcon={isOpened => {
+                        return <Icon name={isOpened? 'chevron-up' : 'chevron-down'} type='font-awesome-5' color={'black'} size={18} />
+                    }}
+                    dropdownIconPosition={'right'}
                 />
             </View>
             <Input
@@ -361,10 +411,17 @@ export const Proposal: React.FC<ProposalScreenProps> = (props) => {
                     rowTextForSelection={(item, index) => {
                         return item.optionName
                     }}
-                    dropdownStyle={{width: '90%'}}
-                    buttonStyle={{backgroundColor: '#c7c7c7', borderRadius: 10, width: '100%', padding: 10, marginTop: 20}}
+                    buttonStyle={styles.dropdown2BtnStyle2}
+                    buttonTextStyle={styles.dropdown2BtnTxtStyle}
+                    dropdownStyle={styles.dropdown2DropdownStyle}
+                    rowStyle={styles.dropdown2RowStyle}
+                    rowTextStyle={styles.dropdown2RowTxtStyle}
+                    selectedRowStyle={styles.dropdown2SelectedRowStyle}
                     defaultButtonText='Inserir consumo:'
-                    buttonTextStyle={{color: 'black'}}
+                    renderDropdownIcon={isOpened => {
+                        return <Icon name={isOpened? 'chevron-up' : 'chevron-down'} type='font-awesome-5' color={'black'} size={18} />
+                    }}
+                    dropdownIconPosition={'right'}
                 />
                 <SelectDropdown
                     data={[
@@ -382,10 +439,17 @@ export const Proposal: React.FC<ProposalScreenProps> = (props) => {
                     rowTextForSelection={(item, index) => {
                         return item.optionName
                     }}
-                    dropdownStyle={{width: '90%'}}
-                    buttonStyle={{backgroundColor: '#c7c7c7', borderRadius: 10, width: '100%', padding: 10, marginTop: 20}}
+                    buttonStyle={styles.dropdown2BtnStyle}
+                    buttonTextStyle={styles.dropdown2BtnTxtStyle}
+                    dropdownStyle={styles.dropdown2DropdownStyle}
+                    rowStyle={styles.dropdown2RowStyle}
+                    rowTextStyle={styles.dropdown2RowTxtStyle}
+                    selectedRowStyle={styles.dropdown2SelectedRowStyle}
                     defaultButtonText='Orientações do Telhado:'
-                    buttonTextStyle={{color: 'black'}}
+                    renderDropdownIcon={isOpened => {
+                        return <Icon name={isOpened? 'chevron-up' : 'chevron-down'} type='font-awesome-5' color={'black'} size={18} />
+                    }}
+                    dropdownIconPosition={'right'}
                 />
             </View>
             
@@ -417,9 +481,58 @@ const styles = StyleSheet.create({
         borderRadius: 7, 
         marginTop: 5,
         paddingLeft: 10,
+        height: 50,
+        backgroundColor: 'white'
     },
     inputStyle: {
-        color: 'gray'
-    }
+        color: 'gray',
+    },
+    mb: {
+        marginBottom: 10
+    },
+    dropdown2BtnStyle: {
+        width: '100%',
+        height: 50,
+        backgroundColor: '#FFF',
+        borderRadius: 8,
+        borderWidth: 1,
+        borderColor: '#444'
+    },
+    dropdown2BtnStyle2: {
+        width: '100%',
+        height: 50,
+        backgroundColor: '#FFF',
+        borderRadius: 8,
+        borderWidth: 1,
+        borderColor: '#444',
+        marginBottom: 20
+    },
+    dropdown2BtnTxtStyle: {
+        color: 'gray',
+        textAlign: 'left',
+        fontWeight: 'bold',
+        fontSize: 16
+    },
+    dropdown2DropdownStyle: {
+        backgroundColor: '#444',
+        borderRadius: 12,
+    },
+    dropdown2RowStyle: {
+        backgroundColor: '#444', 
+        borderBottomColor: '#C5C5C5'
+    },
+    dropdown2RowTxtStyle: {
+      color: '#FFF',
+      textAlign: 'left',
+      fontWeight: 'bold',
+    },
+    dropdown2SelectedRowStyle: {
+        backgroundColor: 'rgba(255,255,255,0.2)'
+    },
+    dropdown2searchInputStyleStyle: {
+      backgroundColor: '#444',
+      borderBottomWidth: 1,
+      borderBottomColor: '#FFF',
+    },
   });
   
