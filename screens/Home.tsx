@@ -1,21 +1,13 @@
-import { StyleSheet, Text, View } from "react-native";
+import { createDrawerNavigator } from "@react-navigation/drawer"
+import { LogoutScreen } from "./Logout"
+import { Proposal } from "./Proposal"
 
-export default function Home() {
+export default function Home(props): JSX.Element {
+    const Drawer = createDrawerNavigator()
     return (
-        <View style={styles.container}>
-            <Text>
-                Home
-            </Text>
-        </View>
+        <Drawer.Navigator>
+            <Drawer.Screen name="Proposal" component={Proposal} options={{ headerTitle: 'Proposta', title: 'Proposta' }} />
+            <Drawer.Screen name="Logout" component={LogoutScreen} />
+        </Drawer.Navigator>
     )
 }
-
-const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      backgroundColor: '#fff',
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-  });
-  
