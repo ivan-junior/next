@@ -1,6 +1,6 @@
 import axios from "axios"
 import { IUserCredentials } from "../interfaces/userCredentials"
-axios.defaults.baseURL = 'https://next-identity-hml.blue-sol.com.br'
+axios.defaults.baseURL = 'http://bluesol-api-identity-hml.eastus2.azurecontainer.io'
 
 export default async function authenticate(params: IUserCredentials) {
     try {
